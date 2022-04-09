@@ -1,0 +1,36 @@
+{
+  "songs": [
+    {
+      "name": "Do I Wanna Know?",
+      "duration": 272,
+      "band": {
+        "name": "Artic Monkeys",
+        "members": 4
+      }
+    },
+    {
+      "name": "Four out of five",
+      "duration": 330,
+      "band": {
+        "name": "Artic Monkeys",
+        "members": 4
+      }
+    },
+    {
+      "name": "Do I Wanna Know?",
+      "duration": 272,
+      "band": {
+        "name": "Artic Monkeys",
+        "members": 4
+      }
+    },
+    {
+      "name": "Four out of five",
+      "duration": 330,
+      "band": {
+        "name": "Artic Monkeys",
+        "members": 4
+      }
+    }
+  ]
+}
