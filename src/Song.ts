@@ -23,7 +23,7 @@ export class Song {
     return this.band;
   }
 
-  public static deserialize(songs: SongInterface[]): Song[] {
+  public static deserialize(songs: SongInterface[] | Song[]): Song[] {
     const mySongs: Song[] = [];
 
     songs.forEach((song) => {

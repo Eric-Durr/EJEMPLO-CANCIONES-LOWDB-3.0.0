@@ -1,13 +1,18 @@
-// import * as lowdb from 'lowdb';
-// import * as FileSync from 'lowdb/adapters/FileSync';
-// import {Song} from "./Song";
-// import {SchemaInterface} from './writeToDataBase';
+import {Low, JSONFile as FileSync } from 'lowdb';
 
-// const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync("songs.json"));
-// const serializedSongs = db.get("songs").value();
+import {Song, SongInterface} from "./Song";
+import {SchemaInterface} from './writeToDataBase';
 
-// const mySongs = Song.deserialize(serializedSongs);
+const adapter = new FileSync<SchemaInterface>('songs.json');
+const db = new Low(adapter);
 
-// mySongs.forEach((song) => {
-//   console.log(song.getName());
-// });
+async function readDB() {
+  await db.read();
+  const serialized: Song[] = db.data.songs;
+  const mySongs = Song.deserialize(serialized);
+  mySongs.forEach((song) => {
+    console.log(song.getName());
+  });
+}
+
+readDB();
